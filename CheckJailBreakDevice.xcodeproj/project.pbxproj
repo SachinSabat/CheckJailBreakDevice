@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CA8832B9258BD64B003A984C /* DetectJailBreakDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA8832B8258BD64B003A984C /* DetectJailBreakDevice.swift */; };
 		CA8F7F14258BD1750091A27D /* CheckJailBreakDevice.h in Headers */ = {isa = PBXBuildFile; fileRef = CA8F7F12258BD1750091A27D /* CheckJailBreakDevice.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CA8F7F22258BD23F0091A27D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA8F7F21258BD23F0091A27D /* AppDelegate.swift */; };
 		CA8F7F24258BD23F0091A27D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA8F7F23258BD23F0091A27D /* SceneDelegate.swift */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CA8832B8258BD64B003A984C /* DetectJailBreakDevice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetectJailBreakDevice.swift; sourceTree = "<group>"; };
 		CA8F7F0F258BD1750091A27D /* CheckJailBreakDevice.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CheckJailBreakDevice.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA8F7F12258BD1750091A27D /* CheckJailBreakDevice.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CheckJailBreakDevice.h; sourceTree = "<group>"; };
 		CA8F7F13258BD1750091A27D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -71,6 +73,7 @@
 			children = (
 				CA8F7F12258BD1750091A27D /* CheckJailBreakDevice.h */,
 				CA8F7F13258BD1750091A27D /* Info.plist */,
+				CA8832B8258BD64B003A984C /* DetectJailBreakDevice.swift */,
 			);
 			path = CheckJailBreakDevice;
 			sourceTree = "<group>";
@@ -149,6 +152,7 @@
 				TargetAttributes = {
 					CA8F7F0E258BD1750091A27D = {
 						CreatedOnToolsVersion = 12.0;
+						LastSwiftMigration = 1200;
 					};
 					CA8F7F1E258BD23F0091A27D = {
 						CreatedOnToolsVersion = 12.0;
@@ -199,6 +203,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CA8832B9258BD64B003A984C /* DetectJailBreakDevice.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -359,6 +364,7 @@
 		CA8F7F18258BD1750091A27D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = M4XZ34X89Z;
@@ -375,6 +381,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.CheckJailBreakDevice;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -383,6 +390,7 @@
 		CA8F7F19258BD1750091A27D /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = M4XZ34X89Z;
