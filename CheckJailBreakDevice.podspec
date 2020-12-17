@@ -1,21 +1,20 @@
-Pod::Spec.new do |spec|
-
-  spec.name         = "CheckJailBreakDevice"
-  spec.version      = "1.0.0"
-  spec.summary      = "Detect JailBreak Device in Swift 5 (iOS) programmatically"
-
-  spec.description  = <<-DESC
-Detect Jail break device| iOS| Avoid Attackers to intrude in your application by all means possible in a single page| Supported to Swift (world first Protocol Oriented Language 🤘)
-                   DESC
-
-  spec.homepage     = "https://github.com/SachinSabat/CheckJailBreakDevice.git"
-  spec.license      = { :type => "MIT", :file => "LICENSE" }
-  spec.author       = { "Sachin Sabat" => "sabat.sachin33@gmail.com" }
-
-  spec.ios.deployment_target = "12.1"
-  spec.swift_version = "4.2"
-
-  spec.source        = { :git => "https://github.com/SachinSabat/CheckJailBreakDevice.git", :tag => "#{spec.version}" }
-  spec.source_files  = "CheckJailBreakDevice/**/*.{h,m,swift}"
-
-end
+Pod::Spec.new do |s|
+          #1.
+          s.name               = "CheckJailBreakDevice"
+          #2.
+          s.version            = "1.0.0"
+          #3.  
+          s.summary         = "Detect JailBreak Device in Swift 5 (iOS) programmatically."
+          #4.
+          s.homepage        = "https://www.linkedin.com/in/sachin-sabat-b9481831/"
+          #5.
+          s.license              = "MIT"
+          #6.
+          s.author               = "Sachin Sabat"
+          #7.
+          s.platform            = :ios, "10.0"
+          #8.
+          s.source              = { :git => "https://github.com/SachinSabat/CheckJailBreakDevice.git", :tag => "1.0.0" }
+          #9.
+          s.source_files     = "CheckJailBreakDevice", "CheckJailBreakDevice/**/*.{h,m,swift}"
+    end
