@@ -20,17 +20,28 @@ CheckJailBreakDevice is a framework with a lot of access to detect if the iOS de
 - Xcode 10.0+
 - Swift 5.0+
 
-## Installation
+## Instructions
+Download the file DetectJailBreakDevice.swift and add it into your project.
 
-#### CocoaPods
-You can use [CocoaPods](https://cocoapods.org/pods/CheckJailBreakDevice) to install `CheckJailBreakDevice` by adding it to your `Podfile`:
-
-```ruby
-platform :ios, '10.0'
-use_frameworks!
-pod 'CheckJailBreakDevice'
-```
 ## Usage example
+
+// Step 1:- Include Delegate "Check_Method_Of_JailBreak" in your particular ViewController/ AppDelegate.
+class ViewController: UIViewController, Check_Method_Of_JailBreak {
+// Delegate Method to take necessary action
+    func sendTheStatusOfJailBreak(value: Bool) {
+        if value{
+            UIControl().sendAction(#selector(URLSessionTask.suspend), to: UIApplication.shared, for: nil)
+            // exit(-1)
+        }
+    }
+   override func viewDidLoad() {
+        super.viewDidLoad()
+        // Step:- 2
+        // What type of check on need to do either by 'readAndWriteFiles' on system or by calling API of system to check if it can run child process
+        // preferable is 'readAndWriteFiles'
+        assignJailBreakCheckType(type: .readAndWriteFiles)
+}
+}
 
 
 ## Tutorial
