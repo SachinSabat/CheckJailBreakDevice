@@ -1,7 +1,6 @@
 # CheckJailBreakDevice
 Detect Jail break device| iOS| Avoid Attackers to intrude in your application by all means possible in a single page| Supported to Swift (world first Protocol Oriented Language 🤘)
 
-[![Swift Version][swift-image]][swift-url]
 [![Build Status][travis-image]][travis-url]
 [![License][license-image]][license-url]
 [![CocoaPods Compatible](https://img.shields.io/cocoapods/v/EZSwiftExtensions.svg)](https://img.shields.io/cocoapods/v/LFAlertController.svg)  
