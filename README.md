@@ -36,7 +36,7 @@ class ViewController: UIViewController, Check_Method_Of_JailBreak {
    override func viewDidLoad() {
         super.viewDidLoad()
         // Step 2:-
-        // What type of check on need to do either by 'readAndWriteFiles' on system or by calling API of system to check if it can run child process
+        // What type of check one need to do either by 'readAndWriteFiles' on system or by calling API of system to check if it can run child process
         // preferable is 'readAndWriteFiles'
         assignJailBreakCheckType(type: .readAndWriteFiles)
      }
