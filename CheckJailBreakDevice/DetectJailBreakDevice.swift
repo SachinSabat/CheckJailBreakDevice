@@ -32,8 +32,20 @@ private var filesPathToCheck: [String] {
     
     return ["/private/var/lib/apt",
             "/Applications/Cydia.app",
+            "/private/var/lib/cydia",
+            "/private/var/tmp/cydia.log",
             "/Applications/RockApp.app",
             "/Applications/Icy.app",
+            "/Applications/WinterBoard.app",
+            "/Applications/SBSetttings.app",
+            "/Applications/blackra1n.app",
+            "/Applications/IntelliScreen.app",
+            "/Applications/Snoop-itConfig.app",
+            "/usr/libexec/cydia/",
+            "/usr/sbin/frida-server",
+            "/usr/bin/cycript",
+            "/usr/local/bin/cycript",
+            "/usr/lib/libcycript.dylib",
             "/bin/sh",
             "/usr/libexec/sftp-server",
             "/usr/libexec/ssh-keysign",
@@ -41,6 +53,9 @@ private var filesPathToCheck: [String] {
             "/bin/bash",
             "/usr/sbin/sshd",
             "/etc/apt",
+            "/usr/bin/ssh",
+            "/bin.sh",
+            "/var/checkra1n.dmg",
             "/System/Library/LaunchDaemons/com.saurik.Cydia.Startup.plist",
             "/System/Library/LaunchDaemons/com.ikey.bbot.plist",
             "/Library/MobileSubstrate/DynamicLibraries/LiveClock.plist",
@@ -69,7 +84,7 @@ public enum TypeOfJailBreakCheckAPI {
     }
 }
 
-public extension Check_Method_Of_JailBreak where Self: AnyObject {
+public extension Check_Method_Of_JailBreak {
     
     // Protocol function extended for JailBreak detection
     //
@@ -79,7 +94,7 @@ public extension Check_Method_Of_JailBreak where Self: AnyObject {
             // Check if Cydia app is installed on the device
             guard UIApplication.shared.canOpenURL(URL(string: "cydia://")!) else {
                 
-                let checkStatus = type == .readAndWriteFiles ? canEditSandboxFilesForJailBreakDetecttion() : systemForkCall()
+                let checkStatus = type == .readAndWriteFiles ? canEditSandboxFilesForJailBreakDetection() : systemForkCall()
                 
                 self.sendTheStatusOfJailBreak(value: checkStatus)
                 return
@@ -94,7 +109,7 @@ public extension Check_Method_Of_JailBreak where Self: AnyObject {
     // It tries to write into system files
     // If it is able to write files then it is JailBroken device
     //
-    func canEditSandboxFilesForJailBreakDetecttion() -> Bool {
+    func canEditSandboxFilesForJailBreakDetection() -> Bool {
         let jailBreakTestText = "Test for JailBreak"
         do {
             try jailBreakTestText.write(toFile:"/private/jailBreakTestText.txt", atomically:true, encoding:String.Encoding.utf8)
