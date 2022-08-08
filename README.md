@@ -42,6 +42,13 @@ class ViewController: UIViewController, Check_Method_Of_JailBreak {
      }
 }
 ```
+Also add cydia in your info.plist under LSApplicationQueriesSchemes. 
+```swift
+    <key>LSApplicationQueriesSchemes</key>
+    <array>
+    <string>cydia</string>
+    </array>
+```
 
 ## Tutorial
 [Medium](https://sabatsachin.medium.com/detect-jailbreak-device-in-swift-5-ios-programatically-da467028242d)
