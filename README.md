@@ -1,4 +1,4 @@
-# CheckJailBreakDevice
+# CheckJailBreakDevice - jailbreak-detection
 Detect Jail break device| iOS| Avoid Attackers to intrude in your application by all means possible in a single page| Supported to Swift (world first Protocol Oriented Language 🤘)
 
 [![Build Status][travis-image]][travis-url]
