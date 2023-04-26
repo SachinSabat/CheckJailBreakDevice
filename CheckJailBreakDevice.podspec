@@ -6,7 +6,7 @@ Pod::Spec.new do |s|
           #3.  
           s.summary         = "Detect JailBreak Device in Swift 5 (iOS) programmatically."
           #4.
-          s.homepage        = "https://www.linkedin.com/in/sachin-sabat-b9481831/"
+          s.homepage        = "https://github.com/SachinSabat/CheckJailBreakDevice"
           #5.
           s.license              = "MIT"
           #6.
