@@ -24,8 +24,8 @@ Download the file DetectJailBreakDevice.swift and add it into your project.
 
 ## Usage example
 ```swift
-// Step 1:- Include Delegate "Check_Method_Of_JailBreak" in your particular ViewController/ AppDelegate.
-class ViewController: UIViewController, Check_Method_Of_JailBreak {
+// Step 1:- Include Delegate "CheckDeviceIsJailbroken" in your particular ViewController/ AppDelegate.
+class ViewController: UIViewController, CheckDeviceIsJailbroken {
 // Delegate Method to take necessary action
     func sendTheStatusOfJailBreak(value: Bool) {
         if value{
@@ -38,7 +38,7 @@ class ViewController: UIViewController, Check_Method_Of_JailBreak {
         // Step 2:-
         // What type of check one need to do either by 'readAndWriteFiles' on system or by calling API of system to check if it can run child process
         // preferable is 'readAndWriteFiles'
-        assignJailBreakCheckType(type: .readAndWriteFiles)
+                checkForJailbrokenDevice(type: .readAndWriteFiles)
      }
 }
 ```
