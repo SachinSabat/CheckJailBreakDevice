@@ -1,7 +1,7 @@
 # CheckJailBreakDevice - jailbreak-detection
 Detect Jail break device| iOS| Avoid Attackers to intrude in your application by all means possible in a single page| Supported to Swift (world first Protocol Oriented Language 🤘)
 
-[![Build Status][travis-image]][travis-url]
+[![Swift Version][swift-image]][swift-url]
 [![License][license-image]][license-url]
 [![CocoaPods Compatible](https://img.shields.io/cocoapods/v/EZSwiftExtensions.svg)](https://img.shields.io/cocoapods/v/LFAlertController.svg)  
 [![Platform](https://img.shields.io/cocoapods/p/LFAlertController.svg?style=flat)](http://cocoapods.org/pods/LFAlertController)
@@ -19,8 +19,15 @@ CheckJailBreakDevice is a framework with a lot of access to detect if the iOS de
 - Xcode 10.0+
 - Swift 5.0+
 
-## Instructions
-Download the file DetectJailBreakDevice.swift and add it into your project.
+## Installation
+#### CocoaPods
+You can use [CocoaPods](https://cocoapods.org/pods/CheckJailBreakDevice) to install `CheckJailBreakDevice` by adding it to your `Podfile`:
+
+```ruby
+platform :ios, '11.0'
+use_frameworks!
+pod 'CheckJailBreakDevice'
+```
 
 ## Usage example
 ```swift
