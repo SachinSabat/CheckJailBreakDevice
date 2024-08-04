@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = 'CheckJailBreakDevice'
-  s.version      = '0.1.0'
+  s.version      = '1.0.0'
   s.summary      = 'A pod to detect whether a device is jailbroken in swift.'
   s.description  = 'CheckJailBreakDevice provides functionality to check if a iOS device is jailbroken.'
   s.homepage     = 'https://github.com/SachinSabat/CheckJailBreakDevice'
