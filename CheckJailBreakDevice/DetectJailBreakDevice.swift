@@ -12,7 +12,7 @@ import UIKit
 //
 // sendTheStatusOfJailBreak:- True/ False value to be send if device is JailBreak
 //
-public protocol Check_Method_Of_JailBreak: AnyObject {
+public protocol CheckDeviceIsJailbroken {
     func sendTheStatusOfJailBreak(value: Bool)
 }
 
@@ -24,80 +24,33 @@ private var isSimulator: Bool {
     return TARGET_OS_SIMULATOR != 0
 }
 
-// Array - filesPathToCheck
-//
-// Important files and App to check if the device is jailBroken
-//
-private var filesPathToCheck: [String] {
-    
-    return ["/private/var/lib/apt",
-            "/Applications/Cydia.app",
-            "/private/var/lib/cydia",
-            "/private/var/tmp/cydia.log",
-            "/Applications/RockApp.app",
-            "/Applications/Icy.app",
-            "/Applications/WinterBoard.app",
-            "/Applications/SBSetttings.app",
-            "/Applications/blackra1n.app",
-            "/Applications/IntelliScreen.app",
-            "/Applications/Snoop-itConfig.app",
-            "/usr/libexec/cydia/",
-            "/usr/sbin/frida-server",
-            "/usr/bin/cycript",
-            "/usr/local/bin/cycript",
-            "/usr/lib/libcycript.dylib",
-            "/bin/sh",
-            "/usr/libexec/sftp-server",
-            "/usr/libexec/ssh-keysign",
-            "/Library/MobileSubstrate/MobileSubstrate.dylib",
-            "/bin/bash",
-            "/usr/sbin/sshd",
-            "/etc/apt",
-            "/usr/bin/ssh",
-            "/bin.sh",
-            "/var/checkra1n.dmg",
-            "/System/Library/LaunchDaemons/com.saurik.Cydia.Startup.plist",
-            "/System/Library/LaunchDaemons/com.ikey.bbot.plist",
-            "/Library/MobileSubstrate/DynamicLibraries/LiveClock.plist",
-            "/Library/MobileSubstrate/DynamicLibraries/Veency.plist"]
-    
-}
-
-private let jailBreakTestText = "Test for JailBreak"
-
-// enum - TypeOfJailBreakCheckAPI
-//
-// Developer can select which func call they want to check for jail break detection
-// Either readWrite or systemCalls
-// It is preferabble to call readAndWrite func
-//
-public enum TypeOfJailBreakCheckAPI {
-    case readAndWriteFiles , systemCalls
-    mutating public func assignJailBreakCheckType(type: TypeOfJailBreakCheckAPI) {
-        switch self {
-        case .readAndWriteFiles:
-            self = .readAndWriteFiles
-        case .systemCalls:
-            self = .systemCalls
-            
-        }
-    }
-}
-
-public extension Check_Method_Of_JailBreak {
-    
+public extension CheckDeviceIsJailbroken {
     // Protocol function extended for JailBreak detection
     //
-    func assignJailBreakCheckType(type: TypeOfJailBreakCheckAPI) {
+    func checkForJailbrokenDevice(type: TypeOfJailBreakCheckAPI) {
         // If it is run on simulator follow the regular flow of the app
         if !isSimulator{
             // Check if Cydia app is installed on the device
-            guard UIApplication.shared.canOpenURL(URL(string: "cydia://")!) else {
-                
-                let checkStatus = type == .readAndWriteFiles ? canEditSandboxFilesForJailBreakDetection() : systemForkCall()
-                
-                self.sendTheStatusOfJailBreak(value: checkStatus)
-                return
+            guard let cydiaURL = URL(string: "cydia://"),
+                  UIApplication.shared.canOpenURL(cydiaURL) else {
+                switch type {
+                case .all:
+                    let checkStatus = canEditSandboxFilesForJailBreakDetection() || systemForkCall() || FridaDetection().isFridaDetected
+                    self.sendTheStatusOfJailBreak(value: checkStatus)
+                    return
+                case .readAndWriteFiles:
+                    let checkStatus = canEditSandboxFilesForJailBreakDetection()
+                    self.sendTheStatusOfJailBreak(value: checkStatus)
+                    return
+                case .suspiciousFileDetection:
+                    let checkStatus = FridaDetection().isFridaDetected
+                    self.sendTheStatusOfJailBreak(value: checkStatus)
+                    return
+                case .systemCalls:
+                    let checkStatus = systemForkCall()
+                    self.sendTheStatusOfJailBreak(value: checkStatus)
+                    return
+                }
             }
             self.sendTheStatusOfJailBreak(value: true)
         }
@@ -108,6 +61,7 @@ public extension Check_Method_Of_JailBreak {
     //
     // It tries to write into system files
     // If it is able to write files then it is JailBroken device
+    // Else checks files in the root directory from the filesPathToCheck array
     //
     func canEditSandboxFilesForJailBreakDetection() -> Bool {
         let jailBreakTestText = "Test for JailBreak"
@@ -128,7 +82,7 @@ public extension Check_Method_Of_JailBreak {
     //
     func isJailBrokenFilesPresentInTheDirectory() -> Bool{
         var checkFileIfExist: Bool = false
-        filesPathToCheck.forEach {
+        FilesPathToCheck().filesPathToCheck.forEach {
             checkFileIfExist =  fm.fileExists(atPath: $0) ? true : false
             if checkFileIfExist{
                 return
