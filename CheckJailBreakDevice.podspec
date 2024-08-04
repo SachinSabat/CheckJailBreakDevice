@@ -2,7 +2,7 @@ Pod::Spec.new do |s|
           #1.
           s.name               = "CheckJailBreakDevice"
           #2.
-          s.version            = "1.0.1"
+          s.version            = "1.0.2"
           #3.  
           s.summary         = "A pod to detect whether a device is jailbroken in swift."
           #4.
@@ -14,7 +14,7 @@ Pod::Spec.new do |s|
           #7.
           s.platform            = :ios, "12.0"
           #8.
-          s.source              = { :git => "https://github.com/SachinSabat/CheckJailBreakDevice.git", :tag => "1.0.1" }
+          s.source              = { :git => "https://github.com/SachinSabat/CheckJailBreakDevice.git", :tag => "1.0.2" }
           #9.
           s.source_files     = "CheckJailBreakDevice", "CheckJailBreakDevice/**/*.{h,m,swift}"
 	  #10.
