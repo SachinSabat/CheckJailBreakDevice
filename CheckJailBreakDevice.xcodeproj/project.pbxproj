@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 60;
+	objectVersion = 54;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -179,7 +179,6 @@
 			);
 			mainGroup = CA8F7F05258BD1750091A27D;
 			packageReferences = (
-				89A236742C5FF38F0069AD02 /* XCLocalSwiftPackageReference "../CheckJailBreakDevice" */,
 			);
 			productRefGroup = CA8F7F10258BD1750091A27D /* Products */;
 			projectDirPath = "";
@@ -507,13 +506,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCLocalSwiftPackageReference section */
-		89A236742C5FF38F0069AD02 /* XCLocalSwiftPackageReference "../CheckJailBreakDevice" */ = {
-			isa = XCLocalSwiftPackageReference;
-			relativePath = ../CheckJailBreakDevice;
-		};
-/* End XCLocalSwiftPackageReference section */
 	};
 	rootObject = CA8F7F06258BD1750091A27D /* Project object */;
 }
