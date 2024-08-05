@@ -1,22 +1,23 @@
-// swift-tools-version: 5.9
+// swift-tools-version:5.9
 import PackageDescription
 
 let package = Package(
     name: "CheckJailBreakDevice",
-    platforms: [
-        .iOS(.v12)
-    ],
     products: [
         .library(
             name: "CheckJailBreakDevice",
-            targets: ["CheckJailBreakDevice"]
-        )
+            targets: ["CheckJailBreakDevice"]),
+    ],
+    dependencies: [
+        // Add dependencies here if needed
     ],
     targets: [
         .target(
             name: "CheckJailBreakDevice",
-            path: "CheckJailBreakDevice"
-        )
+            dependencies: []),
+        .testTarget(
+            name: "CheckJailBreakDeviceTests",
+            dependencies: ["CheckJailBreakDevice"]),
     ]
 )
 

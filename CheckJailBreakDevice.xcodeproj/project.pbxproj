@@ -21,6 +21,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		890E7EF32C6144CF005C3881 /* Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
 		89FE719A2C5F93F7004DD588 /* FilesPathToCheck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilesPathToCheck.swift; sourceTree = "<group>"; };
 		89FE719C2C5FA559004DD588 /* FridaDetection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FridaDetection.swift; sourceTree = "<group>"; };
 		89FE719E2C5FAA02004DD588 /* TypeOfJailBreakCheckAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeOfJailBreakCheckAPI.swift; sourceTree = "<group>"; };
@@ -59,6 +60,7 @@
 		CA8F7F05258BD1750091A27D = {
 			isa = PBXGroup;
 			children = (
+				890E7EF32C6144CF005C3881 /* Package.swift */,
 				CA8F7F11258BD1750091A27D /* CheckJailBreakDevice */,
 				CA8F7F20258BD23F0091A27D /* CheckJailBreakDeviceExample */,
 				CA8F7F10258BD1750091A27D /* Products */,
