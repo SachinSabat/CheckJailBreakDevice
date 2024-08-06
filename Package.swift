@@ -15,9 +15,6 @@ let package = Package(
         .target(
             name: "CheckJailBreakDevice",
             dependencies: []),
-        .testTarget(
-            name: "CheckJailBreakDeviceTests",
-            dependencies: ["CheckJailBreakDevice"]),
     ]
 )
 
