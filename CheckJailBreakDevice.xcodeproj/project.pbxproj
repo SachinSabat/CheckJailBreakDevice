@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		89AF74522C61D2A200353A0B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89AF74492C61D2A200353A0B /* ViewController.swift */; };
+		89AF74532C61D2A200353A0B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 89AF744A2C61D2A200353A0B /* Assets.xcassets */; };
+		89AF74542C61D2A200353A0B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 89AF744B2C61D2A200353A0B /* LaunchScreen.storyboard */; };
+		89AF74552C61D2A200353A0B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 89AF744D2C61D2A200353A0B /* Main.storyboard */; };
+		89AF74562C61D2A200353A0B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89AF744F2C61D2A200353A0B /* AppDelegate.swift */; };
+		89AF74572C61D2A200353A0B /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 89AF74502C61D2A200353A0B /* Info.plist */; };
+		89AF74582C61D2A200353A0B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89AF74512C61D2A200353A0B /* SceneDelegate.swift */; };
 		89FE719B2C5F93F7004DD588 /* FilesPathToCheck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89FE719A2C5F93F7004DD588 /* FilesPathToCheck.swift */; };
 		89FE719D2C5FA559004DD588 /* FridaDetection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89FE719C2C5FA559004DD588 /* FridaDetection.swift */; };
 		89FE719F2C5FAA02004DD588 /* TypeOfJailBreakCheckAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89FE719E2C5FAA02004DD588 /* TypeOfJailBreakCheckAPI.swift */; };
@@ -16,6 +23,13 @@
 
 /* Begin PBXFileReference section */
 		890E7EF32C6144CF005C3881 /* Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
+		89AF74492C61D2A200353A0B /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		89AF744A2C61D2A200353A0B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		89AF744C2C61D2A200353A0B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		89AF744E2C61D2A200353A0B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		89AF744F2C61D2A200353A0B /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		89AF74502C61D2A200353A0B /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		89AF74512C61D2A200353A0B /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		89FE719A2C5F93F7004DD588 /* FilesPathToCheck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilesPathToCheck.swift; sourceTree = "<group>"; };
 		89FE719C2C5FA559004DD588 /* FridaDetection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FridaDetection.swift; sourceTree = "<group>"; };
 		89FE719E2C5FAA02004DD588 /* TypeOfJailBreakCheckAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeOfJailBreakCheckAPI.swift; sourceTree = "<group>"; };
@@ -44,11 +58,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		89AF74482C61D2A200353A0B /* CheckJailBreakDeviceExample */ = {
+			isa = PBXGroup;
+			children = (
+				89AF74492C61D2A200353A0B /* ViewController.swift */,
+				89AF744A2C61D2A200353A0B /* Assets.xcassets */,
+				89AF744B2C61D2A200353A0B /* LaunchScreen.storyboard */,
+				89AF744D2C61D2A200353A0B /* Main.storyboard */,
+				89AF744F2C61D2A200353A0B /* AppDelegate.swift */,
+				89AF74502C61D2A200353A0B /* Info.plist */,
+				89AF74512C61D2A200353A0B /* SceneDelegate.swift */,
+			);
+			path = CheckJailBreakDeviceExample;
+			sourceTree = SOURCE_ROOT;
+		};
 		CA8F7F05258BD1750091A27D = {
 			isa = PBXGroup;
 			children = (
 				890E7EF32C6144CF005C3881 /* Package.swift */,
 				CA8F7F11258BD1750091A27D /* CheckJailBreakDevice */,
+				89AF74482C61D2A200353A0B /* CheckJailBreakDeviceExample */,
 				CA8F7F10258BD1750091A27D /* Products */,
 			);
 			sourceTree = "<group>";
@@ -169,6 +198,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				89AF74572C61D2A200353A0B /* Info.plist in Resources */,
+				89AF74552C61D2A200353A0B /* Main.storyboard in Resources */,
+				89AF74532C61D2A200353A0B /* Assets.xcassets in Resources */,
+				89AF74542C61D2A200353A0B /* LaunchScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -186,6 +219,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				89AF74562C61D2A200353A0B /* AppDelegate.swift in Sources */,
+				89AF74582C61D2A200353A0B /* SceneDelegate.swift in Sources */,
+				89AF74522C61D2A200353A0B /* ViewController.swift in Sources */,
 				89FE719F2C5FAA02004DD588 /* TypeOfJailBreakCheckAPI.swift in Sources */,
 				89FE719B2C5F93F7004DD588 /* FilesPathToCheck.swift in Sources */,
 				89FE719D2C5FA559004DD588 /* FridaDetection.swift in Sources */,
@@ -201,6 +237,25 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		89AF744B2C61D2A200353A0B /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				89AF744C2C61D2A200353A0B /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		89AF744D2C61D2A200353A0B /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				89AF744E2C61D2A200353A0B /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		CA8F7F15258BD1750091A27D /* Debug */ = {
