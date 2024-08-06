@@ -8,7 +8,7 @@
 import UIKit
 import CheckJailBreakDevice
 
-class ViewController: UIViewController, CheckDeviceIsJailbroken {
+class ViewController: UIViewController, CheckIfDeviceIsJailbroken {
     // Method to take necessary action
     func sendTheStatusOfJailBreak(value: Bool) {
         if value{

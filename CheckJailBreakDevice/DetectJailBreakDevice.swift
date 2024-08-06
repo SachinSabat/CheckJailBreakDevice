@@ -64,18 +64,21 @@ public extension CheckIfDeviceIsJailbroken {
     // Else checks files in the root directory from the filesPathToCheck array
     //
     func canEditSandboxFilesForJailBreakDetection() -> Bool {
-        let jailBreakTestText = "Test for JailBreak"
-        do {
-            try jailBreakTestText.write(toFile:"\(jailBreakTestText).txt",
-                                        atomically:true,
-                                        encoding:String.Encoding.utf8)
+        if isJailBrokenFilesPresentInTheDirectory() {
             return true
-        } catch {
-            let resultJailBroken = isJailBrokenFilesPresentInTheDirectory()
-            return resultJailBroken
+        } else {
+            let jailBreakTestText = "Test for JailBreak"
+            do {
+                try jailBreakTestText.write(toFile:"\(jailBreakTestText).txt",
+                                            atomically:true,
+                                            encoding:String.Encoding.utf8)
+                return true
+            } catch {
+                return false
+            }
         }
     }
-    
+
     // func - isJailBrokenFilesPresentInTheDirectory
     //
     // It checks from the array 'filesPathToCheck' that particular file or app
