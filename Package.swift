@@ -3,18 +3,20 @@ import PackageDescription
 
 let package = Package(
     name: "CheckJailBreakDevice",
+    platforms: [
+        .iOS(.v12)
+    ],
     products: [
         .library(
             name: "CheckJailBreakDevice",
-            targets: ["CheckJailBreakDevice"]),
-    ],
-    dependencies: [
-        // Add dependencies here if needed
+            targets: ["CheckJailBreakDevice"]
+        )
     ],
     targets: [
         .target(
             name: "CheckJailBreakDevice",
-            dependencies: []),
+            path: "CheckJailBreakDevice"
+        )
     ]
 )
 
