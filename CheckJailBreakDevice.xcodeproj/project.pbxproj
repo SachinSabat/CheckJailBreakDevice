@@ -12,12 +12,6 @@
 		89FE719F2C5FAA02004DD588 /* TypeOfJailBreakCheckAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89FE719E2C5FAA02004DD588 /* TypeOfJailBreakCheckAPI.swift */; };
 		CA8832B9258BD64B003A984C /* DetectJailBreakDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA8832B8258BD64B003A984C /* DetectJailBreakDevice.swift */; };
 		CA8F7F14258BD1750091A27D /* CheckJailBreakDevice.h in Headers */ = {isa = PBXBuildFile; fileRef = CA8F7F12258BD1750091A27D /* CheckJailBreakDevice.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		CA8F7F22258BD23F0091A27D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA8F7F21258BD23F0091A27D /* AppDelegate.swift */; };
-		CA8F7F24258BD23F0091A27D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA8F7F23258BD23F0091A27D /* SceneDelegate.swift */; };
-		CA8F7F26258BD23F0091A27D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA8F7F25258BD23F0091A27D /* ViewController.swift */; };
-		CA8F7F29258BD23F0091A27D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CA8F7F27258BD23F0091A27D /* Main.storyboard */; };
-		CA8F7F2B258BD2420091A27D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CA8F7F2A258BD2420091A27D /* Assets.xcassets */; };
-		CA8F7F2E258BD2420091A27D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CA8F7F2C258BD2420091A27D /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,13 +24,6 @@
 		CA8F7F12258BD1750091A27D /* CheckJailBreakDevice.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CheckJailBreakDevice.h; sourceTree = "<group>"; };
 		CA8F7F13258BD1750091A27D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CA8F7F1F258BD23F0091A27D /* CheckJailBreakDeviceExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CheckJailBreakDeviceExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		CA8F7F21258BD23F0091A27D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		CA8F7F23258BD23F0091A27D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		CA8F7F25258BD23F0091A27D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		CA8F7F28258BD23F0091A27D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		CA8F7F2A258BD2420091A27D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		CA8F7F2D258BD2420091A27D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		CA8F7F2F258BD2420091A27D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,7 +49,6 @@
 			children = (
 				890E7EF32C6144CF005C3881 /* Package.swift */,
 				CA8F7F11258BD1750091A27D /* CheckJailBreakDevice */,
-				CA8F7F20258BD23F0091A27D /* CheckJailBreakDeviceExample */,
 				CA8F7F10258BD1750091A27D /* Products */,
 			);
 			sourceTree = "<group>";
@@ -87,20 +73,6 @@
 				89FE719E2C5FAA02004DD588 /* TypeOfJailBreakCheckAPI.swift */,
 			);
 			path = CheckJailBreakDevice;
-			sourceTree = "<group>";
-		};
-		CA8F7F20258BD23F0091A27D /* CheckJailBreakDeviceExample */ = {
-			isa = PBXGroup;
-			children = (
-				CA8F7F21258BD23F0091A27D /* AppDelegate.swift */,
-				CA8F7F23258BD23F0091A27D /* SceneDelegate.swift */,
-				CA8F7F25258BD23F0091A27D /* ViewController.swift */,
-				CA8F7F27258BD23F0091A27D /* Main.storyboard */,
-				CA8F7F2A258BD2420091A27D /* Assets.xcassets */,
-				CA8F7F2C258BD2420091A27D /* LaunchScreen.storyboard */,
-				CA8F7F2F258BD2420091A27D /* Info.plist */,
-			);
-			path = CheckJailBreakDeviceExample;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -204,9 +176,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CA8F7F2E258BD2420091A27D /* LaunchScreen.storyboard in Resources */,
-				CA8F7F2B258BD2420091A27D /* Assets.xcassets in Resources */,
-				CA8F7F29258BD23F0091A27D /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -228,32 +197,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CA8F7F26258BD23F0091A27D /* ViewController.swift in Sources */,
-				CA8F7F22258BD23F0091A27D /* AppDelegate.swift in Sources */,
-				CA8F7F24258BD23F0091A27D /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXVariantGroup section */
-		CA8F7F27258BD23F0091A27D /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				CA8F7F28258BD23F0091A27D /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		CA8F7F2C258BD2420091A27D /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				CA8F7F2D258BD2420091A27D /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		CA8F7F15258BD1750091A27D /* Debug */ = {
