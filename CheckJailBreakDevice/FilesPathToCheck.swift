@@ -17,7 +17,6 @@ public struct FilesPathToCheck {
         return ["/private/var/lib/apt",
                 "/Applications/Cydia.app",
                 "/private/var/lib/cydia",
-                "/private/var/tmp/cydia.log",
                 "/Applications/RockApp.app",
                 "/Applications/Icy.app",
                 "/Applications/WinterBoard.app",
@@ -25,6 +24,9 @@ public struct FilesPathToCheck {
                 "/Applications/blackra1n.app",
                 "/Applications/IntelliScreen.app",
                 "/Applications/Snoop-itConfig.app",
+                "/Applications/FakeCarrier.app",
+                "/Applications/MxTube.app",
+                "/Applications/SBSettings.app",
                 "/usr/libexec/cydia/",
                 "/usr/sbin/frida-server",
                 "/usr/bin/cycript",
@@ -65,12 +67,10 @@ public struct FilesPathToCheck {
                 "/private/var/stash",
                 "/private/var/cache/apt/",
                 "/private/var/log/syslog",
-                "/Applications/FakeCarrier.app",
-                "/Applications/MxTube.app",
-                "/Applications/SBSettings.app",
                 "/private/var/mobile/Library/SBSettings/Themes",
                 "/Library/MobileSubstrate/CydiaSubstrate.dylib",
                 "/usr/lib/libfrida-gadget.dylib",
-                "/usr/local/lib/libfrida-gadget.dylib"]
+                "/usr/local/lib/libfrida-gadget.dylib",
+                "/private/var/tmp/cydia.log"]
     }
 }

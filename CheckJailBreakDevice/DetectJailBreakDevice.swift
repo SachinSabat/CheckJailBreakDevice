@@ -12,7 +12,7 @@ import UIKit
 //
 // sendTheStatusOfJailBreak:- True/ False value to be send if device is JailBreak
 //
-public protocol CheckDeviceIsJailbroken {
+public protocol CheckIfDeviceIsJailbroken {
     func sendTheStatusOfJailBreak(value: Bool)
 }
 
@@ -24,10 +24,10 @@ private var isSimulator: Bool {
     return TARGET_OS_SIMULATOR != 0
 }
 
-public extension CheckDeviceIsJailbroken {
+public extension CheckIfDeviceIsJailbroken {
     // Protocol function extended for JailBreak detection
     //
-    func checkForJailbrokenDevice(type: TypeOfJailBreakCheckAPI) {
+    func checkForJailbrokenDevice(type: JailBreakCheckAPITypes) {
         // If it is run on simulator follow the regular flow of the app
         if !isSimulator{
             // Check if Cydia app is installed on the device
@@ -42,7 +42,7 @@ public extension CheckDeviceIsJailbroken {
                     let checkStatus = canEditSandboxFilesForJailBreakDetection()
                     self.sendTheStatusOfJailBreak(value: checkStatus)
                     return
-                case .suspiciousFileDetection:
+                case .fridaFileDetection:
                     let checkStatus = FridaDetection().isFridaDetected
                     self.sendTheStatusOfJailBreak(value: checkStatus)
                     return
@@ -66,7 +66,9 @@ public extension CheckDeviceIsJailbroken {
     func canEditSandboxFilesForJailBreakDetection() -> Bool {
         let jailBreakTestText = "Test for JailBreak"
         do {
-            try jailBreakTestText.write(toFile:"/private/jailBreakTestText.txt", atomically:true, encoding:String.Encoding.utf8)
+            try jailBreakTestText.write(toFile:"\(jailBreakTestText).txt",
+                                        atomically:true,
+                                        encoding:String.Encoding.utf8)
             return true
         } catch {
             let resultJailBroken = isJailBrokenFilesPresentInTheDirectory()
@@ -84,11 +86,10 @@ public extension CheckDeviceIsJailbroken {
         var checkFileIfExist: Bool = false
         FilesPathToCheck().filesPathToCheck.forEach {
             checkFileIfExist =  fm.fileExists(atPath: $0) ? true : false
-            if checkFileIfExist{
+            if checkFileIfExist {
                 return
             }
         }
-        
         return checkFileIfExist
     }
     
