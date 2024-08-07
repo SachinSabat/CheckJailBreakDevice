@@ -20,6 +20,14 @@ CheckJailBreakDevice is a framework with a lot of access to detect if the iOS de
 - Swift 5.0+
 
 ## Installation
+#### Swift Package Manager
+1. Open your Xcode project.
+2. Go to File -> Swift Packages -> Add Package Dependency...
+3. Search for CheckJailBreakDevice or Enter the repository URL: https://cocoapods.org/pods/CheckJailBreakDevice.git
+4. Choose the version rule according to your preference.
+5. Choose the target where you want to integrate CheckJailBreakDevice.
+6. Click Finish.
+
 #### CocoaPods
 You can use [CocoaPods](https://cocoapods.org/pods/CheckJailBreakDevice) to install `CheckJailBreakDevice` by adding it to your `Podfile`:
 
@@ -32,7 +40,7 @@ pod 'CheckJailBreakDevice'
 ## Usage example
 ```swift
 // Step 1:- Include Delegate "CheckDeviceIsJailbroken" in your particular ViewController/ AppDelegate.
-class ViewController: UIViewController, CheckDeviceIsJailbroken {
+class ViewController: UIViewController, CheckIfDeviceIsJailbroken {
 // Delegate Method to take necessary action
     func sendTheStatusOfJailBreak(value: Bool) {
         if value{
@@ -45,7 +53,7 @@ class ViewController: UIViewController, CheckDeviceIsJailbroken {
         // Step 2:-
         // What type of check one need to do either by 'readAndWriteFiles' on system or by calling API of system to check if it can run child process
         // preferable is 'readAndWriteFiles'
-                checkForJailbrokenDevice(type: .readAndWriteFiles)
+            checkForJailbrokenDevice(type: .readAndWriteFiles)
      }
 }
 ```
