@@ -15,9 +15,9 @@ CheckJailBreakDevice is a framework with a lot of access to detect if the iOS de
 
 ## Requirements
 
-- iOS 10.0+
-- Xcode 10.0+
-- Swift 5.0+
+- iOS 14.0+
+- Xcode 16.3+
+- Swift 5.10+
 
 ## Installation
 #### Swift Package Manager
@@ -32,7 +32,7 @@ CheckJailBreakDevice is a framework with a lot of access to detect if the iOS de
 You can use [CocoaPods](https://cocoapods.org/pods/CheckJailBreakDevice) to install `CheckJailBreakDevice` by adding it to your `Podfile`:
 
 ```ruby
-platform :ios, '11.0'
+platform :ios, '14.0'
 use_frameworks!
 pod 'CheckJailBreakDevice'
 ```
@@ -57,11 +57,20 @@ class ViewController: UIViewController, CheckIfDeviceIsJailbroken {
      }
 }
 ```
-Also add cydia in your info.plist under LSApplicationQueriesSchemes. 
+
+
+### Update Info.plist (Under LSApplicationQueriesSchemes)
+You will also need to update your main Info.plist. There is a check in jailbreak detection module that uses ```canOpenURL(_:)``` method and [requires](https://developer.apple.com/documentation/uikit/uiapplication/1622952-canopenurl) specifying URLs that will be queried.
+ 
 ```swift
     <key>LSApplicationQueriesSchemes</key>
     <array>
-    <string>cydia</string>
+        <string>zbra</string>
+        <string>cydia</string>
+        <string>undecimus</string>
+        <string>sileo</string>
+        <string>filza</string>
+        <string>activator</string>
     </array>
 ```
 
@@ -80,7 +89,7 @@ Distributed under the MIT license. See ``LICENSE`` for more information.
 
 [GitHub](https://github.com/SachinSabat)
 
-[swift-image]:https://img.shields.io/badge/swift-3.0-orange.svg
+[swift-image]:https://img.shields.io/badge/swift-5.10-orange.svg
 [swift-url]: https://swift.org/
 [license-image]: https://img.shields.io/badge/License-MIT-blue.svg
 [license-url]: LICENSE

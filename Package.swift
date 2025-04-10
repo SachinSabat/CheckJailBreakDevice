@@ -4,7 +4,7 @@ import PackageDescription
 let package = Package(
     name: "CheckJailBreakDevice",
     platforms: [
-        .iOS(.v12)
+        .iOS(.v14)
     ],
     products: [
         .library(
@@ -15,7 +15,8 @@ let package = Package(
     targets: [
         .target(
             name: "CheckJailBreakDevice",
-            path: "CheckJailBreakDevice"
+            path: "Sources",
+            exclude: ["../Demo"]
         )
     ]
 )

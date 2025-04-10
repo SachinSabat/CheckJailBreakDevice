@@ -23,8 +23,8 @@ class ViewController: UIViewController, CheckIfDeviceIsJailbroken {
         // What type of check one need to do either by 'readAndWriteFiles' on system or by calling API of system to check if it can run child process
         // preferable is 'readAndWriteFiles'
         checkForJailbrokenDevice(type: .all)
+        
+        print("Device looks safe! No need to worry about jailbreak")
     }
-
-
 }
 
