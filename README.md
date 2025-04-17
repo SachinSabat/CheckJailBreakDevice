@@ -11,11 +11,11 @@ CheckJailBreakDevice is a framework with a lot of access to detect if the iOS de
 ## Features
 
 - [x] Protocol Oriented based Implementation
-- [x] Light Weigth code
+- [x] Light Weight code
 
 ## Requirements
 
-- iOS 10.0+
+- iOS 14.0+
 - Xcode 10.0+
 - Swift 5.0+
 
