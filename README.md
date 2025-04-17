@@ -16,7 +16,7 @@ CheckJailBreakDevice is a framework with a lot of access to detect if the iOS de
 ## Requirements
 
 - iOS 14.0+
-- Xcode 15.0+
+- Xcode 14.0+
 - Swift 5.0+
 
 ## Installation
