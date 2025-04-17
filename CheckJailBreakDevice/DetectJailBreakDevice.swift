@@ -21,7 +21,11 @@ let fm = FileManager.default
 
 // isSimulator - Returns true if it is run on Simulator
 private var isSimulator: Bool {
-    return TARGET_OS_SIMULATOR != 0
+    #if targetEnvironment(simulator)
+    return true
+    #else
+    return false
+    #endif
 }
 
 public extension CheckIfDeviceIsJailbroken {

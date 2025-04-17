@@ -11,12 +11,12 @@ CheckJailBreakDevice is a framework with a lot of access to detect if the iOS de
 ## Features
 
 - [x] Protocol Oriented based Implementation
-- [x] Light Weigth code
+- [x] Light Weight code
 
 ## Requirements
 
-- iOS 10.0+
-- Xcode 10.0+
+- iOS 14.0+
+- Xcode 15.0+
 - Swift 5.0+
 
 ## Installation
@@ -32,7 +32,7 @@ CheckJailBreakDevice is a framework with a lot of access to detect if the iOS de
 You can use [CocoaPods](https://cocoapods.org/pods/CheckJailBreakDevice) to install `CheckJailBreakDevice` by adding it to your `Podfile`:
 
 ```ruby
-platform :ios, '11.0'
+platform :ios, '14.0'
 use_frameworks!
 pod 'CheckJailBreakDevice'
 ```
@@ -80,7 +80,7 @@ Distributed under the MIT license. See ``LICENSE`` for more information.
 
 [GitHub](https://github.com/SachinSabat)
 
-[swift-image]:https://img.shields.io/badge/swift-3.0-orange.svg
+[swift-image]:https://img.shields.io/badge/swift-5.10-orange.svg
 [swift-url]: https://swift.org/
 [license-image]: https://img.shields.io/badge/License-MIT-blue.svg
 [license-url]: LICENSE
