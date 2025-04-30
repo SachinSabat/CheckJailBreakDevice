@@ -15,7 +15,7 @@ CheckJailBreakDevice is a framework with a lot of access to detect if the iOS de
 
 ## Requirements
 
-- iOS 14.0+
+- iOS 13.0+
 - Xcode 14.0+
 - Swift 5.0+
 
@@ -32,7 +32,7 @@ CheckJailBreakDevice is a framework with a lot of access to detect if the iOS de
 You can use [CocoaPods](https://cocoapods.org/pods/CheckJailBreakDevice) to install `CheckJailBreakDevice` by adding it to your `Podfile`:
 
 ```ruby
-platform :ios, '14.0'
+platform :ios, '13.0'
 use_frameworks!
 pod 'CheckJailBreakDevice'
 ```
