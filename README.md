@@ -28,12 +28,17 @@ CheckJailBreakDevice is a framework with a lot of access to detect if the iOS de
 5. Choose the target where you want to integrate CheckJailBreakDevice.
 6. Click Finish.
 
-#### CocoaPods
-You can use [CocoaPods](https://cocoapods.org/pods/CheckJailBreakDevice) to install `CheckJailBreakDevice` by adding it to your `Podfile`:
+```ruby
+.package(url: "https://github.com/SachinSabat/CheckJailBreakDevice", from: "1.0.9")
+```
+
+### CocoaPods
+You can install `CheckJailBreakDevice` using [CocoaPods](https://cocoapods.org/pods/CheckJailBreakDevice). Add this to your `Podfile`:
 
 ```ruby
 platform :ios, '13.0'
 use_frameworks!
+
 pod 'CheckJailBreakDevice'
 ```
 
