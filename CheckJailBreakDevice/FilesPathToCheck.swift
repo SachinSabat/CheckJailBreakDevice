@@ -38,6 +38,7 @@ public struct FilesPathToCheck {
                 "/Library/MobileSubstrate/MobileSubstrate.dylib",
                 "/bin/bash",
                 "/usr/sbin/sshd",
+                "/etc/fstab",
                 "/etc/apt",
                 "/usr/bin/ssh",
                 "/bin.sh",

@@ -33,30 +33,34 @@ public extension CheckIfDeviceIsJailbroken {
     //
     func checkForJailbrokenDevice(type: JailBreakCheckAPITypes) {
         // If it is run on simulator follow the regular flow of the app
+        // Check if Cydia app is installed on the device
         if !isSimulator{
-            // Check if Cydia app is installed on the device
-            guard let cydiaURL = URL(string: "cydia://"),
-                  UIApplication.shared.canOpenURL(cydiaURL) else {
-                switch type {
-                case .all:
-                    let checkStatus = canEditSandboxFilesForJailBreakDetection() || systemForkCall() || FridaDetection().isFridaDetected
-                    self.sendTheStatusOfJailBreak(value: checkStatus)
-                    return
-                case .readAndWriteFiles:
-                    let checkStatus = canEditSandboxFilesForJailBreakDetection()
-                    self.sendTheStatusOfJailBreak(value: checkStatus)
-                    return
-                case .fridaFileDetection:
-                    let checkStatus = FridaDetection().isFridaDetected
-                    self.sendTheStatusOfJailBreak(value: checkStatus)
-                    return
-                case .systemCalls:
-                    let checkStatus = systemForkCall()
-                    self.sendTheStatusOfJailBreak(value: checkStatus)
+            switch type {
+            case .all:
+                let checkStatus = canEditSandboxFilesForJailBreakDetection() || systemForkCall() || FridaDetection().isFridaDetected
+                self.sendTheStatusOfJailBreak(value: checkStatus)
+                return
+            case .readAndWriteFiles:
+                let checkStatus = canEditSandboxFilesForJailBreakDetection()
+                self.sendTheStatusOfJailBreak(value: checkStatus)
+                return
+            case .fridaFileDetection:
+                let checkStatus = FridaDetection().isFridaDetected
+                self.sendTheStatusOfJailBreak(value: checkStatus)
+                return
+            case .systemCalls:
+                let checkStatus = systemForkCall()
+                self.sendTheStatusOfJailBreak(value: checkStatus)
+                return
+            case .checkForCydiaAppInstallation:
+                guard let cydiaURL = URL(string: "cydia://"),
+                      UIApplication.shared.canOpenURL(cydiaURL) else {
+                    self.sendTheStatusOfJailBreak(value: false)
                     return
                 }
+                self.sendTheStatusOfJailBreak(value: true)
+                return
             }
-            self.sendTheStatusOfJailBreak(value: true)
         }
         self.sendTheStatusOfJailBreak(value: false)
     }
@@ -70,7 +74,19 @@ public extension CheckIfDeviceIsJailbroken {
     func canEditSandboxFilesForJailBreakDetection() -> Bool {
         if isJailBrokenFilesPresentInTheDirectory() {
             return true
-        } else {
+        }
+        else {
+            // check for dyld libs
+            if let env = ProcessInfo.processInfo.environment["DYLD_INSERT_LIBRARIES"], !env.isEmpty {
+                return true  // Jailbreak suspected
+            }
+            //check for private content
+            let path = "/private"
+            let fileList = try? FileManager.default.contentsOfDirectory(atPath: path)
+            if fileList != nil {
+                return true // Jailbroken
+            }
+            // try writing files into system root lib
             let jailBreakTestText = "Test for JailBreak"
             do {
                 try jailBreakTestText.write(toFile:"\(jailBreakTestText).txt",
@@ -105,9 +121,7 @@ public extension CheckIfDeviceIsJailbroken {
     // It is used to check if there is a child process run at kernel level
     //
     func systemForkCall() -> Bool{
-        
         let pid = getpgrp()
-        
         if pid < 0
         {
             return true
@@ -116,7 +130,6 @@ public extension CheckIfDeviceIsJailbroken {
         {
             return false
         }
-        
     }
     
 }

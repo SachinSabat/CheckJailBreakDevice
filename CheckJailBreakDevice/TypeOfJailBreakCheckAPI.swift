@@ -13,7 +13,7 @@ import Foundation
 // It is preferabble to call readAndWrite func
 //
 public enum JailBreakCheckAPITypes {
-    case all, readAndWriteFiles, systemCalls, fridaFileDetection
+    case all, readAndWriteFiles, systemCalls, fridaFileDetection, checkForCydiaAppInstallation
     mutating public func assignJailBreakCheckType(type: JailBreakCheckAPITypes) {
         switch self {
         case .all:
@@ -24,6 +24,8 @@ public enum JailBreakCheckAPITypes {
             self = .systemCalls
         case .fridaFileDetection:
             self = .fridaFileDetection
+        case .checkForCydiaAppInstallation:
+            self = .checkForCydiaAppInstallation
         }
     }
 }

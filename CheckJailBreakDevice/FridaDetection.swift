@@ -7,6 +7,7 @@
 
 import Foundation
 import MachO
+import Darwin
 
 public final class FridaDetection {
 
@@ -14,6 +15,10 @@ public final class FridaDetection {
         get {
             if isSuspiciousLibraryLoaded() { return true }
             if isFridaEnvironmentVariablePresent() { return true }
+            if isSuspiciousDynamicLibrariesPresent() { return true }
+            if isRestrictedPathsAccessible() { return true }
+            if isSuspiciousSymlinkPresent() { return true }
+            if isSuspiciousParentProcessPresent() { return true }
             return false
         }
     }
@@ -60,5 +65,40 @@ public final class FridaDetection {
             }
         }
         return false
+    }
+    
+    private func isSuspiciousDynamicLibrariesPresent() -> Bool {
+        let imageCount = _dyld_image_count()
+        for i in 0..<imageCount {
+            if let name = _dyld_get_image_name(i) {
+                let imagePath = String(cString: name)
+                if imagePath.lowercased().contains("hook") ||
+                   imagePath.lowercased().contains("substrate") ||
+                   imagePath.lowercased().contains("roothide") {
+                    return true
+                }
+            }
+        }
+        return false
+    }
+    
+    private func isRestrictedPathsAccessible() -> Bool {
+        return fopen("/bin/bash", "r") != nil || fopen("/Applications/Cydia.app", "r") != nil
+    }
+    
+    private func isSuspiciousSymlinkPresent() -> Bool {
+        let paths = ["/Applications", "/usr/lib"]
+        for path in paths {
+            var statInfo = stat()
+            if lstat(path, &statInfo) == 0 && (statInfo.st_mode & S_IFMT) == S_IFLNK {
+                return true
+            }
+        }
+        return false
+    }
+    
+    private func isSuspiciousParentProcessPresent() -> Bool {
+        let ppid = getppid()
+        return ppid != 1 && ppid != getpid() // unusual if not launchd or self
     }
 }
