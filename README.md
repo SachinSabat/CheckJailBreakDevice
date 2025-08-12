@@ -29,7 +29,7 @@ CheckJailBreakDevice is a framework with a lot of access to detect if the iOS de
 6. Click Finish.
 
 ```ruby
-.package(url: "https://github.com/SachinSabat/CheckJailBreakDevice", from: "1.0.9")
+.package(url: "https://github.com/SachinSabat/CheckJailBreakDevice", from: "1.0.11")
 ```
 
 ### CocoaPods
