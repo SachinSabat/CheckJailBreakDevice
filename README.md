@@ -20,17 +20,17 @@ CheckJailBreakDevice is a framework with a lot of access to detect if the iOS de
 - Swift 5.0+
 
 ## Installation
-#### Swift Package Manager
-1. Open your Xcode project.
-2. Go to File -> Swift Packages -> Add Package Dependency...
-3. Search for CheckJailBreakDevice or Enter the repository URL: https://cocoapods.org/pods/CheckJailBreakDevice.git
-4. Choose the version rule according to your preference.
-5. Choose the target where you want to integrate CheckJailBreakDevice.
-6. Click Finish.
 
-```ruby
-.package(url: "https://github.com/SachinSabat/CheckJailBreakDevice", from: "1.0.11")
-```
+### Swift Package Manager (SPM)
+
+1. In Xcode, go to **File > Add Packages…**  
+2. Enter the repository URL:  
+
+   ```swift
+   .package(url: "https://github.com/SachinSabat/CheckJailBreakDevice.git", from: "1.0.11")
+3. Choose the target where you want to integrate CheckJailBreakDevice.
+
+4. Click Finish.
 
 ### CocoaPods
 You can install `CheckJailBreakDevice` using [CocoaPods](https://cocoapods.org/pods/CheckJailBreakDevice). Add this to your `Podfile`:
@@ -41,6 +41,10 @@ use_frameworks!
 
 pod 'CheckJailBreakDevice'
 ```
+
+Then run:
+pod install
+
 
 ## Usage example
 ```swift
